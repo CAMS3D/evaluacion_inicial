@@ -50,15 +50,15 @@ find_primes <- function(start, end) {
       primes <- c(primes, i)  
       next
     }
-    is_prime <- FALSE
+    is_prime <- TRUE
     for (j in 2:ceiling(sqrt(i))) {
       if (j == 2 || j %% 2 != 0) {
         if (i %% j == 0) {
-          is_prime <- TRUE
+          is_prime <- FALSE
           break
         }
       }
-    }
+    
     if (is_prime) {
       primes <- c(primes, i)
     }
@@ -81,11 +81,11 @@ def find_primes(start, end):
         if i == 2:
             primes.append(i)
             continue
-        is_prime = False
+        is_prime = True
         for j in range(2, int(math.sqrt(i)) + 1):
             if j == 2 or j % 2 != 0:
                 if i % j == 0:
-                    is_prime = True
+                    is_prime = False
                     break
         if is_prime:
             primes.append(i)
